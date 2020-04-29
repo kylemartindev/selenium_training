@@ -56,7 +56,13 @@ public class DrawMouse {
         sleep(3000);
         topleftwindow.moveByOffset(0,50).clickAndHold().moveByOffset(-50,0).perform();
         sleep(3000);
-        topleftwindow.moveByOffset(0,50).perform();
+        topleftwindow.moveByOffset(0,-50).perform();
+        sleep(3000);
+        topleftwindow.release().perform();
+        topleftwindow.moveByOffset(25,0).clickAndHold().moveByOffset(0,50).perform();
+        sleep(3000);
+        topleftwindow.release().perform();
+        topleftwindow.moveByOffset(-25,-25).clickAndHold().moveByOffset(50,0).perform();
         topleftwindow.release().perform();
         Actions bottomrightwindow = new Actions(driver);
         //bottomrightwindow

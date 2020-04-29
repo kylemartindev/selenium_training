@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static java.lang.Thread.*;
 import static org.junit.Assert.assertTrue;
@@ -50,7 +51,21 @@ public void SeleniumTest() throws InterruptedException{
     actions.moveByOffset(50,50).clickAndHold().moveByOffset(50,50).perform();
     actions.moveToElement(imageslink).click().perform();//always add perform when building an action
 
+    for(int sec = 0; sec <= 30; sec++){
+        if(isElementPresent(By.id("q")) )break;
+        sleep(3000);}
+    }
+    public boolean isElementPresent(By location) {
+        try {
+            driver.findElement(location);
+            return true;
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
 }
+
+
 
 @After
     public void teardown() {
