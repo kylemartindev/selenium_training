@@ -78,7 +78,6 @@ public class ShoppingSite {
         WebElement blouses = (new WebDriverWait(driver,10000
         )).until(ExpectedConditions.presenceOfElementLocated(By.linkText("Blouse")));
        assertTrue(blousefound.isDisplayed());
-       assertEquals("Blouse","Blouse");
        blousefound.click();
         WebElement addtocartwait = (new WebDriverWait(driver,120
         )).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"add_to_cart\"]/button/span")));

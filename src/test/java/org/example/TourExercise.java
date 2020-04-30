@@ -15,6 +15,10 @@ import org.testng.annotations.*;
 import java.io.File;
 import java.io.IOException;
 
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertTrue;
+
+
 public class TourExercise {
     WebDriver driver;
     ExtentReports report;
@@ -42,19 +46,28 @@ public class TourExercise {
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
         driver.manage().window().maximize();
         driver.get("http://www.newtours.demoaut.com/");
-
-
+        WebElement username = driver.findElement(By.name("username"));
+        username.sendKeys("Bob2");
+        WebElement password = driver.findElement(By.name("username"));
+        password.sendKeys("testing1234");
+        WebElement submit = driver.findElement(By.name("username"));
+        submit.click();
+        WebElement signoff = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[2]/td/table/tbody/tr/td[1]/a"));
+        signoff.getText();
+        assertTrue(signoff.isDisplayed());
         File login = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(login, new File(System.getProperty("user.dir") + "/test-output/login.jpg"));
         test.log(LogStatus.PASS, "The logo was present", "<img src=login.jpg>");
     }
 
     @Test
-    public void gettingfallers() throws IOException {
+    public void bookaflight() throws IOException {
         test = report.startTest("Testing the stock market website");
         driver.manage().window().maximize();
         test.log(LogStatus.INFO, "Started chrome browser and made it fullscreen");
         driver.get("http://www.newtours.demoaut.com/");
+        WebElement flight = driver.findElement(By.partialLinkText("flights"));
+        flight.click();
 
         File orderconfirmation = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(orderconfirmation, new File(System.getProperty("user.dir") + "/test-output/orderconfirmation.jpg"));
