@@ -2,6 +2,7 @@ package org.example;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -21,6 +22,11 @@ import static org.junit.Assert.assertTrue;
 public class ShoppingSite {
 
     private WebDriver driver;
+
+    @BeforeClass
+    public void onetimesetup() {
+
+    }
 
     @Before
     public void setup() {
