@@ -46,27 +46,44 @@ public class DrawMouse {
         topwindowright.moveByOffset(0,-50).perform();
         topwindowright.release().perform();
         topwindowright.moveByOffset(25,0).clickAndHold().moveByOffset(0,50).perform();
-        sleep(3000);
+
         topwindowright.release().perform();
         topwindowright.moveByOffset(-25,-25).clickAndHold().moveByOffset(50,0).perform();
         topwindowright.release().perform();
-        sleep(3000);
+
         Actions topleftwindow = new Actions(driver);
         topleftwindow.moveByOffset(100,-25).clickAndHold().moveByOffset(50,0).perform();
-        sleep(3000);
         topleftwindow.moveByOffset(0,50).clickAndHold().moveByOffset(-50,0).perform();
-        sleep(3000);
         topleftwindow.moveByOffset(0,-50).perform();
-        sleep(3000);
         topleftwindow.release().perform();
         topleftwindow.moveByOffset(25,0).clickAndHold().moveByOffset(0,50).perform();
-        sleep(3000);
         topleftwindow.release().perform();
         topleftwindow.moveByOffset(-25,-25).clickAndHold().moveByOffset(50,0).perform();
         topleftwindow.release().perform();
         Actions bottomrightwindow = new Actions(driver);
-        //bottomrightwindow
-
+        bottomrightwindow.moveByOffset(-275,-75).perform();
+        bottomrightwindow.moveByOffset(75,200).clickAndHold().moveByOffset(50,0).perform();
+        bottomrightwindow.moveByOffset(0,50).clickAndHold().moveByOffset(-50,0).perform();
+        bottomrightwindow.moveByOffset(0,-50).perform();
+        bottomrightwindow.release().perform();
+        bottomrightwindow.moveByOffset(25,0).clickAndHold().moveByOffset(0,50).perform();
+        bottomrightwindow.release().perform();
+        bottomrightwindow.moveByOffset(-25,-25).clickAndHold().moveByOffset(50,0).perform();
+        sleep(3000);
+        bottomrightwindow.release().perform();
+        Actions bottomleft = new Actions(driver);
+        bottomleft.moveByOffset(0,-25).perform();
+        bottomleft.moveByOffset(100,0).clickAndHold().moveByOffset(50,0).perform();
+        bottomleft.moveByOffset(0,50).clickAndHold().moveByOffset(-50,0).moveByOffset(0,-50).perform();
+        bottomleft.release().perform();
+        bottomleft.moveByOffset(25,0).clickAndHold().moveByOffset(0,50).perform();
+        bottomleft.release().perform();
+        bottomleft.moveByOffset(-25,-25).clickAndHold().moveByOffset(50,0).perform();
+        bottomleft.release().perform();
+        Actions door = new Actions(driver);
+        door.moveByOffset(-125,75).clickAndHold().moveByOffset(0,-75).perform();
+        door.moveByOffset(50,0).moveByOffset(0,75).perform();
+        sleep(3000);
     }
 
     @After
